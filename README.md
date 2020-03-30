@@ -1,6 +1,10 @@
-# telemet-next
+# Horizzn
 
-> Telemet Next
+Simple, accurate, and beautiful Earth Curvature Calculator.
+
+[https://horizzn.com](https://horizzn.com)
+
+
 
 ## Build Setup
 
