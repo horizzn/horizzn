@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# USAGE:
+# bash deploy.shell
+
+# abort on errors
+set -e
+
+# build
+npm run generate
+
+# commit
+git add -A
+git commit -m 'Deploy'
+git push -f
+# git subtree push --prefix dist origin master
+git subtree push --prefix dist origin gh-pages
