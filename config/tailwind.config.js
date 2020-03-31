@@ -259,6 +259,7 @@ module.exports = {
     cursor: {
       auto: 'auto',
       default: 'default',
+      grab: 'grab',
       pointer: 'pointer',
       wait: 'wait',
       text: 'text',

@@ -90,7 +90,7 @@
           transformOrigin: {x: 0.5, y: 0.5}
         }"
         selector="#diagram"
-        class="w-full h-full"
+        class="w-full h-full cursor-grab"
       >
         <diagram class="w-full h-full absolute" />
       </pan-zoom>
