@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="page-wrap">
     <aside
-      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto"
+      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
     >
       <header class="flex flex-1 justify-center">
         <logomark-calculator
@@ -78,13 +78,28 @@
         </ol>
       </sidebar-collapse>
     </aside>
-    <div class="diagram w-full relative min-h-screen md:ml-73 md:w-sidebar">
-      <diagram class="w-full absolute bottom-0 right-0" />
+    <!-- md:ml-73 md:w-sidebar -->
+    <div class="diagram w-full h-screen absolute right-0 md:w-sidebar">
+      <pan-zoom
+        :options="{
+          autocenter: true,
+          bounds: false,
+          minZoom: 0.5,
+          maxZoom: 3,
+          smoothScroll: true,
+          transformOrigin: {x: 0.5, y: 0.5}
+        }"
+        selector="#diagram"
+        class="w-full h-full"
+      >
+        <diagram class="w-full h-full absolute" />
+      </pan-zoom>
     </div>
   </div>
 </template>
 
 <script>
+// import PanZoom from 'vue-panzoom'
 // import Icon from '~/components/icons/Icon'
 import LogomarkCalculator from '~/components/LogomarkCalculator'
 // import AppCalcInput from '~/components/AppCalcInput'
@@ -101,6 +116,7 @@ export default {
     // AppCalcInput,
     // AppCalcResult,
     Diagram,
+    // panZoom,
     SidebarCollapse,
     SidebarCollapseInput,
     SidebarCollapseInputHeader,

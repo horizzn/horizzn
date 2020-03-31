@@ -7,8 +7,6 @@
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
-    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
     <defs>
       <path
         id="path-1"
@@ -288,7 +286,13 @@
         </feMerge>
       </filter>
     </defs>
-    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g
+      id="diagram"
+      stroke="none"
+      stroke-width="1"
+      fill="none"
+      fill-rule="evenodd"
+    >
       <g id="diagram" transform="translate(0.000000, -6.000000)">
         <g>
           <path
