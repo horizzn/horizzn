@@ -100,7 +100,7 @@
           }
         }"
         selector="#diagram"
-        class="w-full h-full cursor-grab"
+        class="w-full h-full cursor-grab active:cursor-grabbing"
       >
         <diagram class="w-full h-full absolute outline-none" />
       </pan-zoom>
