@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="overflow-hidden">
     <!-- <div class="border-t border-brand-6" /> -->
     <div class="border-t border-gray-200">
       <a
