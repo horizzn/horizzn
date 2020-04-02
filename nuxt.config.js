@@ -44,12 +44,12 @@ export default {
     [
       '@nuxtjs/google-analytics',
       {
-        id: 'UA-130081653-1',
+        id: 'UA-130081653-1'
         //  For testing analytics in dev mode
-        debug: {
-          enabled: true,
-          sendHitTask: true
-        }
+        // debug: {
+        //   enabled: true,
+        //   sendHitTask: true
+        // }
       }
     ]
   ],
