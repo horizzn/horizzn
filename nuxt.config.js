@@ -39,7 +39,19 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/analytics-module
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-130081653-1',
+        //  For testing analytics in dev mode
+        debug: {
+          enabled: true,
+          sendHitTask: true
+        }
+      }
+    ]
   ],
   tailwindcss: {
     configPath: '~/config/tailwind.config.js',
