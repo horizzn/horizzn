@@ -4,9 +4,14 @@
       class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
     >
       <header class="flex flex-1 justify-center">
-        <logomark-calculator
-          class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
-        />
+        <a href="/">
+          <logomark-base class="mt-8 mb-12 w-20 h-20">
+            <icon-calc />
+          </logomark-base>
+          <!-- <logomark-calculator
+            class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
+          /> -->
+        </a>
       </header>
       <sidebar-collapse
         title="Calculator"
@@ -52,7 +57,7 @@
           class="text-xs tracking-wider mb-2 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
           <span class="uppercase">Units</span>
-          <span class="text-xs lowercase text-gray-500">
+          <span class="text-xs lowercase text-gray-600">
             <span
               :class="{'text-brand-800 font-bold': !metric}"
               class="cursor-pointer mr-2"
@@ -87,21 +92,28 @@
           minZoom: 0.5,
           maxZoom: 3,
           smoothScroll: true,
-          transformOrigin: {x: 0.5, y: 0.5}
+          transformOrigin: {x: 0.5, y: 0.5},
+          beforeWheel: function(e) {
+            // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
+            var shouldIgnore = !e.altKey
+            return shouldIgnore
+          }
         }"
         selector="#diagram"
         class="w-full h-full cursor-grab"
       >
-        <diagram class="w-full h-full absolute" />
+        <diagram class="w-full h-full absolute outline-none" />
       </pan-zoom>
     </div>
   </div>
 </template>
 
 <script>
+import logomarkBase from '~/components/icons/brand/logomarkBase'
+import IconCalc from '~/components/icons/brand/IconCalc'
 // import PanZoom from 'vue-panzoom'
 // import Icon from '~/components/icons/Icon'
-import LogomarkCalculator from '~/components/LogomarkCalculator'
+// import LogomarkCalculator from '~/components/LogomarkCalculator'
 // import AppCalcInput from '~/components/AppCalcInput'
 // import AppCalcResult from '~/components/AppCalcResult'
 import Diagram from '~/components/Diagram'
@@ -112,7 +124,9 @@ import SidebarCollapseResult from '~/components/SidebarCollapseResult'
 
 export default {
   components: {
-    LogomarkCalculator,
+    logomarkBase,
+    IconCalc,
+    // LogomarkCalculator,
     // AppCalcInput,
     // AppCalcResult,
     Diagram,
