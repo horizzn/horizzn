@@ -4,8 +4,8 @@
     <div class="border-t border-gray-200">
       <a
         href="#"
-        :class="{'text-gray-950': active}"
-        class="px-4 py-3 flex justify-between items-center text-gray-600 antialiased"
+        :class="{'text-brand-900': active}"
+        class="px-4 py-3 flex justify-between items-center text-brand-600 antialiased"
         @click.prevent="active = !active"
       >
         <h2 class="uppercase tracking-wide font-medium text-xs">

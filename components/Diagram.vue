@@ -293,7 +293,7 @@
       fill="none"
       fill-rule="evenodd"
     >
-      <g id="diagram" transform="translate(0.000000, -6.000000)">
+      <g transform="translate(0.000000, -6.000000)">
         <g>
           <path
             id="target"
@@ -335,7 +335,7 @@
             transform="translate(1169.642508, 145.383178) scale(-1, 1) translate(-1169.642508, -145.383178) "
           ></path>
           <g id="h1-icon-s" transform="translate(1183.000000, 135.000000)">
-            <g id="icon-s">
+            <g>
               <use
                 fill="black"
                 fill-opacity="1"
@@ -449,7 +449,7 @@
             </text>
           </g>
           <g id="d-icon-s" transform="translate(697.000000, 18.000000)">
-            <g id="icon-s">
+            <g>
               <use
                 fill="black"
                 fill-opacity="1"
@@ -502,7 +502,7 @@
             fill-rule="nonzero"
           ></path>
           <g id="h-icon-s" transform="translate(222.000000, 116.000000)">
-            <g id="icon-s">
+            <g>
               <use
                 fill="black"
                 fill-opacity="1"
