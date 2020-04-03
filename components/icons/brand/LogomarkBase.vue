@@ -1,6 +1,11 @@
 <template lang="html">
   <div
-    class="logomark flex items-center justify-center rounded-1/3 shadow-xs hover:shadow-lg transition ease-in-out duration-300 cursor-pointer relative transform hover:-translate-y-1"
+    :class="
+      active
+        ? 'active shadow-lg hover:shadow-xl hover:-translate-y-01'
+        : 'shadow-xs hover:shadow-lg hover:-translate-y-1'
+    "
+    class="logomark flex items-center justify-center rounded-1/3 hover:shadow-lg transition ease-in-out duration-300 cursor-pointer relative transform"
   >
     <!-- Depreceated: No Firefox Support -->
     <!-- <div
@@ -37,6 +42,10 @@ export default {
     name: {
       type: String,
       default: 'ecc' // 38%
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -46,18 +55,23 @@ export default {
 .logomark__back {
   width: 100%;
   height: 100%;
-  /* position: relative;
-  top: 1px; */
   background: url('~assets/images/congrad.png') center center no-repeat;
   background-size: 60%;
-  /* filter: brightness(4) brightness(0.93); */
-  transition: all 0.13s ease-in-out;
+  &::before {
+    @apply bg-brand-200 rounded-full absolute block;
+    content: '';
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    right: 20%;
+    transition: all 0.555s ease-in-out;
+  }
 }
 
-.logomark:hover .logomark__back {
-  /* background: url('~assets/images/congrad.png') center center; */
-  filter: brightness(1);
-  transition: all 0.43s ease-in-out;
+.logomark:hover .logomark__back::before,
+.logomark.active .logomark__back::before {
+  transition: all 0.222s ease-in-out;
+  background: transparent;
 }
 
 /* Earth Curvature Calculator */

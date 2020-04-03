@@ -5,7 +5,7 @@
     >
       <header class="flex flex-1 justify-center">
         <a href="/">
-          <logomark-base class="mt-8 mb-12 w-20 h-20">
+          <logomark-base active class="mt-8 mb-12 w-20 h-20">
             <icon-calc />
           </logomark-base>
           <!-- <logomark-calculator
@@ -17,6 +17,25 @@
         title="Calculator"
         class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
       >
+        <header
+          class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
+        >
+          <span class="uppercase">Units</span>
+          <span class="text-xs lowercase text-gray-600">
+            <span
+              :class="{'text-brand-800 font-bold': !metric}"
+              class="cursor-pointer mr-2"
+              @click="metric = false"
+              >imperial</span
+            >
+            <span
+              :class="{'text-brand-800 font-bold': metric}"
+              class="cursor-pointer"
+              @click="metric = true"
+              >Metric</span
+            >
+          </span>
+        </header>
         <sidebar-collapse-input-header
           :unit="metric ? 'm' : 'ft'"
           title="Eyesight Height"
@@ -48,30 +67,6 @@
           class="mt-1"
         />
         <sidebar-collapse-result :result="metric ? h1 : h1i" class="pb-4" />
-      </sidebar-collapse>
-      <sidebar-collapse
-        title="Preferences"
-        class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
-      >
-        <header
-          class="text-xs tracking-wider mb-2 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
-        >
-          <span class="uppercase">Units</span>
-          <span class="text-xs lowercase text-gray-600">
-            <span
-              :class="{'text-brand-800 font-bold': !metric}"
-              class="cursor-pointer mr-2"
-              @click="metric = false"
-              >imperial</span
-            >
-            <span
-              :class="{'text-brand-800 font-bold': metric}"
-              class="cursor-pointer"
-              @click="metric = true"
-              >Metric</span
-            >
-          </span>
-        </header>
       </sidebar-collapse>
       <sidebar-collapse
         title="Assumptions"

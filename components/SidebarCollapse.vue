@@ -5,7 +5,7 @@
       <a
         href="#"
         :class="{'text-brand-900': active}"
-        class="px-4 py-3 flex justify-between items-center text-brand-600 antialiased"
+        class="px-4 py-3 flex justify-between items-center text-brand-700 antialiased"
         @click.prevent="active = !active"
       >
         <h2 class="uppercase tracking-wide font-medium text-xs">

@@ -3,7 +3,7 @@
     class="bg-gray-100 min-h-screen flex justify-around items-center text-center mx-auto justify-aroundr"
   >
     <!-- Earth Curvature Calculator -->
-    <logomark-base class="w-24 h-24">
+    <logomark-base active class="w-24 h-24">
       <icon-calc />
     </logomark-base>
 
