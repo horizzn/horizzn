@@ -11,15 +11,20 @@ Simple, accurate, and beautiful Earth Curvature Calculator.
 2. The Earth is a sphere with a radius of 6371 kilometers.
 
 ## How to use the Calculator?
-Calculating the Earth curvature with Horizzn Calculator is a simple two-step process:
+Calculating the Earth curvature with Horizzn Calculator is a simple three-step process:
 
 ### 1️⃣
-
-Fill in your `EYESIGHT HEIGHT` / `H` in the first input field, that's your eyesight height in relation to sea level. This will return your `DISTANCE TO HORIZON` / `D1`.`
+Select your measurement preference:
+`🇺🇸imperial` or `🇬🇧metric`.
 
 ### 2️⃣
 
+Fill in your `EYESIGHT HEIGHT` / `H` in the first input field, that's your eyesight height in relation to sea level. This will return your `DISTANCE TO HORIZON` / `D1`.`
+
+### 3️⃣
+
 Fill in your `DISTANCE TO TARGET` / `D` in the second input field, that's the distance between you and the target object in the distance. This will return the `TARGET HIDDEN HEIGHT` / `H1` of the distant object/target.
+
 
 ## How to calculate Earth curvature?
 
@@ -29,19 +34,19 @@ Then, we can use the `Distance to Horizon` to calculate the rate of which Earth 
 
 We can manually calculate Earth curvature using these two formulas:
 
-``` js
+``` bash
 a = √[(r + h)² - r²]
 
-a = Your distance to the horizon
+a = Distance to horizon
 r = Earth radius
-h = Your height above sea level
+h = Eyesight height
 ```
 
-``` js
+``` bash
 x = √(a² - 2ad + d² + r²) - r 
 
-x = Hidden object part
-d = Your distance to the object
+x = Target hidden height
+d = Distance to target
 ```
 
 ## Disclaimer
