@@ -7,32 +7,41 @@
       name
     ]"
     class="logomark flex items-center justify-center rounded-1/3 hover:shadow-lg transition ease-in-out duration-300 cursor-pointer relative transform"
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
   >
     <!-- Depreceated: No Firefox Support -->
     <!-- <div
       class="logomark__back w-full h-full rounded-full absolute transition-all duration-200 ease-out"
     /> -->
+    <icon class="logomark__back absolute m-0 p-0">
+      <transition v-if="hover || active" name="fade">
+        <conical-gradient />
+      </transition>
 
-    <!-- <icon class="logomark__icon w-2/3 h-full absolute">
-      <conical-gradient />
-    </icon> -->
+      <transition v-else name="fade">
+        <icon-horizzn class="text-brand-200 fill-current" />
+      </transition>
+    </icon>
 
-    <div class="logomark__back w-full h-full rounded-full absolute" />
-
-    <icon class="logomark__icon absolute text-brand-100 fill-current">
+    <icon class="logomark__icon text-brand-100 fill-current absolute m-0 p-0">
       <slot />
     </icon>
   </div>
+
+  <!-- <div class="logomark__back w-full h-full rounded-full absolute" /> -->
 </template>
 
 <script>
 import Icon from '~/components/icons/Icon'
-// import ConicalGradient from '~/components/icons/brand/ConicalGradient'
+import IconHorizzn from '~/components/icons/brand/IconHorizzn'
+import ConicalGradient from '~/components/icons/brand/ConicalGradient'
 
 export default {
   components: {
-    Icon
-    // ConicalGradient
+    Icon,
+    IconHorizzn,
+    ConicalGradient
   },
   props: {
     name: {
@@ -43,6 +52,11 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  data() {
+    return {
+      hover: false
+    }
   }
 }
 </script>
@@ -52,26 +66,43 @@ export default {
   top: 25%;
 } */
 .logomark__back {
-  width: 100%;
-  height: 100%;
-  background: url('~assets/images/congrad.png') center center no-repeat;
-  background-size: 60%;
-  &::before {
+  width: 61.803%;
+  height: 61.803%;
+  /* background: url('~assets/images/congrad.png') center center no-repeat; */
+  /* background-size: 60%; */
+  /* &::before {
     @apply bg-brand-200 rounded-full absolute block;
-    opacity: 0.5;
     content: '';
-    width: 60%;
-    height: 60%;
-    top: 20%;
-    right: 20%;
+    width: 62%;
+    height: 62%;
+    top: 19%;
+    right: 19%;
     transition: all 0.555s ease-in-out;
-  }
+    padding: 0;
+    margin: 0;
+  } */
+}
+
+/* .logomark:hover .logomark__back,
+.logomark.active .logomark__back {
+  transition: all 0.222s ease-in-out;
 }
 
 .logomark:hover .logomark__back::before,
 .logomark.active .logomark__back::before {
   transition: all 0.222s ease-in-out;
   background: transparent;
+} */
+
+/* Horizzn */
+.hrz {
+  & .logomark__icon {
+    width: 54%;
+    height: 54%;
+  }
+  & .logomark__back {
+    transform: rotate(-105deg);
+  }
 }
 /* Earth Curvature Calculator */
 .ecc {
@@ -129,4 +160,13 @@ export default {
     opacity: 1;
   }
 } */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.333s ease-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
