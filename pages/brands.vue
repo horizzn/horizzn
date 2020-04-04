@@ -7,6 +7,11 @@
       <icon-calc />
     </logomark-base>
 
+    <!-- Flat Earth Clock -->
+    <logomark-base active name="fec" class="w-24 h-24">
+      <icon-clock />
+    </logomark-base>
+
     <div
       class="icon shadow-1 w-32 h-32 transition ease-in-out duration-300 cursor-pointer relative hover:bg-brand-7 transform hover:-translate-y-1 flex justify-center items-center"
     >
@@ -14,8 +19,13 @@
     </div>
 
     <!-- United Flat earth -->
-    <logomark-base name="ufe" class="w-24 h-24">
+    <logomark-base active name="ufe" class="w-24 h-24">
       <icon-ufe />
+    </logomark-base>
+
+    <!-- Flat Earth Clock -->
+    <logomark-base active name="pps" class="w-24 h-24">
+      <icon-compass />
     </logomark-base>
   </div>
 </template>
@@ -24,12 +34,16 @@
 // import Icon from '~/components/icons/Icon'
 import logomarkBase from '~/components/icons/brand/logomarkBase'
 import IconCalc from '~/components/icons/brand/IconCalc'
+import IconClock from '~/components/icons/brand/IconClock'
+import IconCompass from '~/components/icons/brand/IconCompass'
 import IconUfe from '~/components/icons/brand/IconUfe'
 
 export default {
   components: {
     logomarkBase,
     IconCalc,
+    IconClock,
+    IconCompass,
     IconUfe
   }
 }
