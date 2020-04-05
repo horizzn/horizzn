@@ -87,7 +87,7 @@
           bounds: false,
           minZoom: 0.5,
           maxZoom: 3,
-          pinchSpeed: 1.5,
+          pinchSpeed: 1,
           smoothScroll: true,
           beforeWheel: function(e) {
             // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
