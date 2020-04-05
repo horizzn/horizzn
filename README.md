@@ -19,7 +19,7 @@ Select your measurement preference:
 
 ### 2️⃣
 
-Fill in your `EYESIGHT HEIGHT` / `H` in the first input field, that's your eyesight height in relation to sea level. This will return your `DISTANCE TO HORIZON` / `D1`.`
+Fill in your `EYESIGHT HEIGHT` / `H` in the first input field, that's your eyesight height in relation to sea level. This will return your `DISTANCE TO HORIZON` / `D1`.
 
 ### 3️⃣
 
