@@ -6,7 +6,7 @@
         : 'shadow-xs hover:shadow-lg hover:-translate-y-1',
       name
     ]"
-    class="logomark flex items-center justify-center rounded-1/3 hover:shadow-lg transition ease-in-out duration-300 cursor-pointer relative transform"
+    class="logomark flex items-center justify-center rounded-1/3 hover:shadow-lg transition ease-in-out duration-300 cursor-pointer relative transform gradient-white"
     @mouseover="hover = true"
     @mouseleave="hover = false"
   >

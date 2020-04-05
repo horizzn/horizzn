@@ -15,9 +15,9 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
-    gradients: {
-      white: '135deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.9) 100%'
-    },
+    // gradients: {
+    //   // white: '45deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.96) 100%'
+    // },
     screens: {
       sm: '640px',
       md: '768px',
