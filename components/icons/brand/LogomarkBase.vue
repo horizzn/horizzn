@@ -20,7 +20,7 @@
       </transition>
 
       <transition v-else name="fade">
-        <icon-horizzn class="text-brand-200 fill-current" />
+        <icon-circle class="text-brand-200 fill-current" />
       </transition>
     </icon>
 
@@ -34,13 +34,13 @@
 
 <script>
 import Icon from '~/components/icons/Icon'
-import IconHorizzn from '~/components/icons/brand/IconHorizzn'
+import IconCircle from '~/components/icons/brand/IconCircle'
 import ConicalGradient from '~/components/icons/brand/ConicalGradient'
 
 export default {
   components: {
     Icon,
-    IconHorizzn,
+    IconCircle,
     ConicalGradient
   },
   props: {

@@ -13,7 +13,7 @@
     </logomark-base>
 
     <logomark-base active name="hrz" class="w-32 h-32">
-      <icon-horizzn />
+      <icon-circle />
     </logomark-base>
 
     <!-- <div
@@ -40,7 +40,7 @@ import logomarkBase from '~/components/icons/brand/logomarkBase'
 import IconCalc from '~/components/icons/brand/IconCalc'
 import IconClock from '~/components/icons/brand/IconClock'
 import IconCompass from '~/components/icons/brand/IconCompass'
-import IconHorizzn from '~/components/icons/brand/IconHorizzn'
+import IconCircle from '~/components/icons/brand/IconCircle'
 import IconUfe from '~/components/icons/brand/IconUfe'
 
 export default {
@@ -49,7 +49,7 @@ export default {
     IconCalc,
     IconClock,
     IconCompass,
-    IconHorizzn,
+    IconCircle,
     IconUfe
   }
 }
