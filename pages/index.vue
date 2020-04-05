@@ -5,7 +5,7 @@
     >
       <header class="flex flex-1 justify-center">
         <a href="/">
-          <logomark-base active class="mt-8 mb-12 w-20 h-20">
+          <logomark-base active class="mt-8 mb-12 w-24 h-24">
             <icon-calc />
           </logomark-base>
           <!-- <logomark-calculator
