@@ -15,7 +15,7 @@
       </header>
       <sidebar-collapse
         title="Calculator"
-        class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
+        class="shadow-none hover:shadow-down-md hover:duration-200 transition ease-in-out duration-700"
       >
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
@@ -70,7 +70,7 @@
       </sidebar-collapse>
       <sidebar-collapse
         title="Assumptions"
-        class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
+        class="shadow-none hover:shadow-down-md hover:duration-200 transition ease-in-out duration-700"
       >
         <ol class="list-decimal list-outside pl-3 text-xs">
           <li class="pb-01">Light travels in a straight line.</li>

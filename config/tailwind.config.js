@@ -237,17 +237,30 @@ module.exports = {
     },
     boxShadow: {
       xs:
-        '-1px -2px 2px rgba(255, 255, 255, 0.9), 1px 2px 2px rgba(34, 56, 108, 0.05)',
+        '-2px 1px 2px rgba(255, 255, 255, 0.9), 2px -1px 2px rgba(34, 56, 108, 0.05)',
       sm:
-        '-2px -3px 5px rgba(255, 255, 255, 0.95), 2px 3px 5px rgba(34, 56, 108, 0.08)',
+        '-3px 2px 5px rgba(255, 255, 255, 0.95), 3px -2px 5px rgba(34, 56, 108, 0.08)',
       default:
-        '-3px -6px 10px rgba(255, 255, 255, 1), 3px 6px 10px rgba(34, 56, 108, 0.1)',
+        '-6px 3px 10px rgba(255, 255, 255, 1), 6px -3px 10px rgba(34, 56, 108, 0.1)',
       md:
-        '-4px -8px 12px rgba(255, 255, 255, 1), 4px 8px 12px rgba(34, 56, 108, 0.1)',
+        '-8px 4px 12px rgba(255, 255, 255, 1), 8px -4px 12px rgba(34, 56, 108, 0.1)',
       lg:
-        '-6px -12px 24px rgba(255, 255, 255, 1), 6px 12px 24px rgba(34, 56, 108, 0.1)',
+        '-12px 6px 24px rgba(255, 255, 255, 1), 12px -6px 24px rgba(34, 56, 108, 0.1)',
       xl:
+        '-16px 8px 32px rgba(255, 255, 255, 1), 16px -8px 32px rgba(34, 56, 108, 0.1)',
+      'down-xs':
+        '-1px -2px 2px rgba(255, 255, 255, 0.9), 1px 2px 2px rgba(34, 56, 108, 0.05)',
+      'down-sm':
+        '-2px -3px 5px rgba(255, 255, 255, 0.95), 2px 3px 5px rgba(34, 56, 108, 0.08)',
+      'down-default':
+        '-3px -6px 10px rgba(255, 255, 255, 1), 3px 6px 10px rgba(34, 56, 108, 0.1)',
+      'down-md':
+        '-4px -8px 12px rgba(255, 255, 255, 1), 4px 8px 12px rgba(34, 56, 108, 0.1)',
+      'down-lg':
+        '-6px -12px 24px rgba(255, 255, 255, 1), 6px 12px 24px rgba(34, 56, 108, 0.1)',
+      'down-xl':
         '-8px -16px 32px rgba(255, 255, 255, 1), 8px 16px 32px rgba(34, 56, 108, 0.1)',
+      // Original
       '2xl': '0 25px 50px -12px rgba(34, 56, 108, 0.2)',
       inner: 'inset 0 1px 1px 0 rgba(34, 56, 108, 0.1)',
       inset:
