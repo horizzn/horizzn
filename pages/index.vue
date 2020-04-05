@@ -79,6 +79,7 @@
       </sidebar-collapse>
     </aside>
     <!-- md:ml-73 md:w-sidebar -->
+    <!-- transformOrigin: {x: 0.5, y: 0.5}, -->
     <div class="diagram w-full h-screen absolute right-0 md:w-sidebar">
       <pan-zoom
         :options="{
@@ -86,8 +87,8 @@
           bounds: false,
           minZoom: 0.5,
           maxZoom: 3,
+          pinchSpeed: 1.5,
           smoothScroll: true,
-          transformOrigin: {x: 0.5, y: 0.5},
           beforeWheel: function(e) {
             // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
             var shouldIgnore = !e.altKey
