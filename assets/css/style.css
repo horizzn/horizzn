@@ -52,3 +52,21 @@ aside::-webkit-scrollbar-thumb {
     rgba(255, 255, 255, 0.96) 100%
   );
 } */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.333s ease-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-slower-enter-active,
+.fade-slower-leave-active {
+  transition: opacity 1.999s ease-out;
+}
+.fade-slower-enter,
+.fade-slower-leave-to {
+  opacity: 0.5;
+}

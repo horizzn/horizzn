@@ -1,18 +1,42 @@
 <template lang="html">
   <div
-    class="bg-gray-100 min-h-screen flex justify-around items-center text-center mx-auto justify-aroundr"
+    class="bg-gray-100 min-h-screen flex flex-col md:flex-row justify-center items-center text-center mx-auto"
   >
+    <icon
+      viewbox="0 0 512 112"
+      class=" text-brand-600 fill-current w-auto h-24 absolute top-0"
+    >
+      <icon-logotype />
+    </icon>
+
+    <transition v-if="isEcc" name="fade-slower">
+      <h2
+        class="tfta absolute bottom-0 mb-6 text-brand-400 font-medium uppercase
+        text-xs"
+      >
+        Tools For The Awakened
+      </h2>
+    </transition>
     <!-- Earth Curvature Calculator -->
-    <logomark-base class="w-24 h-24">
+    <logomark-base
+      class="w-18 h-18 m-3 md:w-24 md:h-24 md:mx-6 lg:w-28 lg:h-28 lg:mx-8"
+    >
       <icon-calc />
     </logomark-base>
 
     <!-- Flat Earth Clock -->
-    <logomark-base name="fec" class="w-24 h-24">
+    <logomark-base
+      name="fec"
+      class="w-18 h-18 m-3 md:w-24 md:h-24 md:mx-6 lg:w-28 lg:h-28 lg:mx-8"
+    >
       <icon-clock />
     </logomark-base>
 
-    <logomark-base active name="hrz" class="w-32 h-32">
+    <logomark-base
+      active
+      name="hrz"
+      class="hidden md:flex w-24 h-24 md:w-32 md:h-32 md:mx-6 lg:w-36 lg:h-36 lg:mx-8"
+    >
       <icon-circle />
     </logomark-base>
 
@@ -23,34 +47,51 @@
     </div> -->
 
     <!-- United Flat earth -->
-    <logomark-base name="ufe" class="w-24 h-24">
+    <logomark-base
+      name="ufe"
+      class="w-18 h-18 m-3 md:w-24 md:h-24 md:mx-6 lg:w-28 lg:h-28 lg:mx-8"
+    >
       <icon-ufe />
     </logomark-base>
 
     <!-- Flat Earth Clock -->
-    <logomark-base name="pps" class="w-24 h-24">
+    <logomark-base
+      name="pps"
+      class="w-18 h-18 m-3 md:w-24 md:h-24 md:mx-6 lg:w-28 lg:h-28 lg:mx-8"
+    >
       <icon-compass />
     </logomark-base>
   </div>
 </template>
 
 <script>
-// import Icon from '~/components/icons/Icon'
-import logomarkBase from '~/components/icons/brand/logomarkBase'
+import Icon from '~/components/icons/Icon'
 import IconCalc from '~/components/icons/brand/IconCalc'
 import IconClock from '~/components/icons/brand/IconClock'
 import IconCompass from '~/components/icons/brand/IconCompass'
 import IconCircle from '~/components/icons/brand/IconCircle'
+import IconLogotype from '~/components/icons/brand/IconLogotype'
 import IconUfe from '~/components/icons/brand/IconUfe'
+import LogomarkBase from '~/components/icons/brand/LogomarkBase'
 
 export default {
   components: {
-    logomarkBase,
+    Icon,
     IconCalc,
     IconClock,
     IconCompass,
     IconCircle,
-    IconUfe
+    IconLogotype,
+    IconUfe,
+    LogomarkBase
+  },
+  data() {
+    return {
+      isEcc: true,
+      isfec: false,
+      isFeu: false,
+      isPps: false
+    }
   }
 }
 </script>
@@ -71,15 +112,7 @@ export default {
   }
 }
 
-.shadow-1 {
-  /* @apply ; */
-  box-shadow: 2px 2px 3px rgb(163, 177, 198, 0.2),
-    -3px -3px 6px rgba(255, 255, 255, 0.8);
-  &:hover {
-    box-shadow: 16px 16px 32px rgb(163, 177, 198, 0.2),
-      -16px -16px 32px rgba(255, 255, 255, 0.8);
-    /* 0 0 16px rgba(0, 236, 255, 0.201); */
-    /* margin-top: -40px; */
-  }
+.tfta {
+  letter-spacing: 0.3rem;
 }
 </style>

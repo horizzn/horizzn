@@ -3,8 +3,8 @@
     :width="width"
     :height="height"
     :aria-labelledby="iconName"
+    :viewBox="viewbox"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
     role="presentation"
   >
     <!-- <title -->
@@ -21,6 +21,10 @@
 <script>
 export default {
   props: {
+    viewbox: {
+      type: String,
+      default: '0 0 512 512'
+    },
     iconName: {
       type: String,
       default: 'icon'

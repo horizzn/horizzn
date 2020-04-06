@@ -105,13 +105,8 @@
 </template>
 
 <script>
-import logomarkBase from '~/components/icons/brand/logomarkBase'
+import LogomarkBase from '~/components/icons/brand/LogomarkBase'
 import IconCalc from '~/components/icons/brand/IconCalc'
-// import PanZoom from 'vue-panzoom'
-// import Icon from '~/components/icons/Icon'
-// import LogomarkCalculator from '~/components/LogomarkCalculator'
-// import AppCalcInput from '~/components/AppCalcInput'
-// import AppCalcResult from '~/components/AppCalcResult'
 import Diagram from '~/components/Diagram'
 import SidebarCollapse from '~/components/SidebarCollapse'
 import SidebarCollapseInput from '~/components/SidebarCollapseInput'
@@ -120,13 +115,9 @@ import SidebarCollapseResult from '~/components/SidebarCollapseResult'
 
 export default {
   components: {
-    logomarkBase,
+    LogomarkBase,
     IconCalc,
-    // LogomarkCalculator,
-    // AppCalcInput,
-    // AppCalcResult,
     Diagram,
-    // panZoom,
     SidebarCollapse,
     SidebarCollapseInput,
     SidebarCollapseInputHeader,

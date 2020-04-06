@@ -160,13 +160,4 @@ export default {
     opacity: 1;
   }
 } */
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.333s ease-out;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>
