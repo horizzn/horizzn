@@ -45,7 +45,7 @@
 
     <!-- --------------------------------------------- -->
     <!-- HORIZZN° -->
-    <nuxt-link to="/" class="hrz group m-3 md:mx-6 lg:mx-8">
+    <nuxt-link to="/" class="hrz group m-0 md:mx-6 lg:mx-8">
       <base-logomark
         active
         name="hrz"
