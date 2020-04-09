@@ -61,7 +61,7 @@ export default {
 
 <style lang="postcss">
 .conical {
-  background: url('~assets/images/congrad.png') center center;
+  background: url('~assets/images/congrad-sharp.png') center center;
   background-size: contain;
 }
 
