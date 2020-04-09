@@ -12,12 +12,10 @@
       <icon-circle class="mono text-brand-200 fill-current" />
     </icon>
 
-    <icon
+    <div
       :class="{'opacity-100': active}"
-      class="logomark__back absolute m-0 p-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
-    >
-      <conical-gradient class="gradient" />
-    </icon>
+      class="conical logomark__back absolute m-0 p-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+    />
 
     <icon class="logomark__icon text-brand-100 fill-current absolute m-0 p-0">
       <slot />
@@ -30,13 +28,13 @@
 <script>
 import Icon from '~/components/icons/Icon'
 import IconCircle from '~/components/icons/brand/IconCircle'
-import ConicalGradient from '~/components/icons/brand/ConicalGradient'
+// import ConicalGradient from '~/components/icons/brand/ConicalGradient'
 
 export default {
   components: {
     Icon,
-    IconCircle,
-    ConicalGradient
+    IconCircle
+    // ConicalGradient
   },
   props: {
     name: {
@@ -62,17 +60,10 @@ export default {
 </script>
 
 <style lang="postcss">
-/* .logomark {
-  & .gradient {
-    opacity: 0;
-    transition: visibility 0s, opacity 0.33s ease-in-out;
-  }
-  &:hover {
-    & .gradient {
-      opacity: 1;
-    }
-  }
-} */
+.conical {
+  background: url('~assets/images/congrad.png') center center;
+  background-size: contain;
+}
 
 .logomark__back {
   width: 61.803%;
