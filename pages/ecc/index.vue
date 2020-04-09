@@ -20,7 +20,9 @@
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
-          <span class="uppercase">Units</span>
+          <span class="uppercase cursor-pointer" @click="metric = !metric"
+            >Units</span
+          >
           <span class="text-xs lowercase text-gray-600">
             <span
               :class="{'text-brand-800 font-bold': !metric}"
