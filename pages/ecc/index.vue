@@ -1,17 +1,41 @@
 <template lang="html">
   <div class="page-wrap">
     <aside
-      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto"
+      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
     >
       <header class="flex flex-1 justify-center">
-        <logomark-calculator
-          class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
-        />
+        <a href="/">
+          <base-logomark active class="mt-8 mb-12 w-22 h-22">
+            <icon-calc />
+          </base-logomark>
+          <!-- <logomark-calculator
+            class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
+          /> -->
+        </a>
       </header>
       <sidebar-collapse
         title="Calculator"
-        class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
+        class="shadow-none hover:shadow-down-md hover:duration-200 transition ease-in-out duration-700"
       >
+        <header
+          class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
+        >
+          <span class="uppercase">Units</span>
+          <span class="text-xs lowercase text-gray-600">
+            <span
+              :class="{'text-brand-800 font-bold': !metric}"
+              class="cursor-pointer mr-2"
+              @click="metric = false"
+              >imperial</span
+            >
+            <span
+              :class="{'text-brand-800 font-bold': metric}"
+              class="cursor-pointer"
+              @click="metric = true"
+              >Metric</span
+            >
+          </span>
+        </header>
         <sidebar-collapse-input-header
           :unit="metric ? 'm' : 'ft'"
           title="Eyesight Height"
@@ -45,32 +69,8 @@
         <sidebar-collapse-result :result="metric ? h1 : h1i" class="pb-4" />
       </sidebar-collapse>
       <sidebar-collapse
-        title="Preferences"
-        class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
-      >
-        <header
-          class="text-xs tracking-wider mb-2 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
-        >
-          <span class="uppercase">Units</span>
-          <span class="text-xs lowercase text-gray-500">
-            <span
-              :class="{'text-brand-800 font-bold': !metric}"
-              class="cursor-pointer mr-2"
-              @click="metric = false"
-              >imperial</span
-            >
-            <span
-              :class="{'text-brand-800 font-bold': metric}"
-              class="cursor-pointer"
-              @click="metric = true"
-              >Metric</span
-            >
-          </span>
-        </header>
-      </sidebar-collapse>
-      <sidebar-collapse
         title="Assumptions"
-        class="shadow-none hover:shadow-md hover:duration-200 transition ease-in-out duration-700"
+        class="shadow-none hover:shadow-down-md hover:duration-200 transition ease-in-out duration-700"
       >
         <ol class="list-decimal list-outside pl-3 text-xs">
           <li class="pb-01">Light travels in a straight line.</li>
@@ -78,17 +78,35 @@
         </ol>
       </sidebar-collapse>
     </aside>
-    <div class="diagram w-full relative min-h-screen md:ml-73 md:w-sidebar">
-      <diagram class="w-full absolute bottom-0 right-0" />
+    <!-- md:ml-73 md:w-sidebar -->
+    <!-- transformOrigin: {x: 0.5, y: 0.5}, -->
+    <div class="diagram w-full h-screen absolute right-0 md:w-sidebar">
+      <pan-zoom
+        :options="{
+          autocenter: true,
+          bounds: false,
+          minZoom: 0.5,
+          maxZoom: 3,
+          pinchSpeed: 1,
+          smoothScroll: true,
+          beforeWheel: function(e) {
+            // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
+            var shouldIgnore = !e.altKey
+            return shouldIgnore
+          }
+        }"
+        selector="#diagram"
+        class="w-full h-full cursor-grab active:cursor-grabbing"
+      >
+        <diagram class="w-full h-full absolute outline-none" />
+      </pan-zoom>
     </div>
   </div>
 </template>
 
 <script>
-// import Icon from '~/components/icons/Icon'
-import LogomarkCalculator from '~/components/LogomarkCalculator'
-// import AppCalcInput from '~/components/AppCalcInput'
-// import AppCalcResult from '~/components/AppCalcResult'
+import BaseLogomark from '~/components/icons/brand/BaseLogomark'
+import IconCalc from '~/components/icons/brand/IconCalc'
 import Diagram from '~/components/Diagram'
 import SidebarCollapse from '~/components/SidebarCollapse'
 import SidebarCollapseInput from '~/components/SidebarCollapseInput'
@@ -97,9 +115,8 @@ import SidebarCollapseResult from '~/components/SidebarCollapseResult'
 
 export default {
   components: {
-    LogomarkCalculator,
-    // AppCalcInput,
-    // AppCalcResult,
+    BaseLogomark,
+    IconCalc,
     Diagram,
     SidebarCollapse,
     SidebarCollapseInput,

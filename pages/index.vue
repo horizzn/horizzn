@@ -1,208 +1,122 @@
 <template lang="html">
-  <div class="page-wrap">
-    <aside
-      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
-    >
-      <header class="flex flex-1 justify-center">
-        <a href="/">
-          <logomark-base active class="mt-8 mb-12 w-24 h-24">
-            <icon-calc />
-          </logomark-base>
-          <!-- <logomark-calculator
-            class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
-          /> -->
-        </a>
-      </header>
-      <sidebar-collapse
-        title="Calculator"
-        class="shadow-none hover:shadow-down-md hover:duration-200 transition ease-in-out duration-700"
+  <div
+    class="main bg-gray-100 min-h-screen flex flex-col md:flex-row justify-center items-center text-center mx-auto"
+  >
+    <nuxt-link to="/" class="absolute top-0">
+      <icon
+        viewbox="0 0 512 112"
+        class=" text-brand-600 fill-current w-24 h-24"
       >
-        <header
-          class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
-        >
-          <span class="uppercase">Units</span>
-          <span class="text-xs lowercase text-gray-600">
-            <span
-              :class="{'text-brand-800 font-bold': !metric}"
-              class="cursor-pointer mr-2"
-              @click="metric = false"
-              >imperial</span
-            >
-            <span
-              :class="{'text-brand-800 font-bold': metric}"
-              class="cursor-pointer"
-              @click="metric = true"
-              >Metric</span
-            >
-          </span>
-        </header>
-        <sidebar-collapse-input-header
-          :unit="metric ? 'm' : 'ft'"
-          title="Eyesight Height"
-          identifier="H"
-          class="mt-4"
-        />
-        <sidebar-collapse-input v-model.number="h0" class="pb-4" />
-        <sidebar-collapse-input-header
-          :unit="metric ? 'km' : 'mi'"
-          title="Distance To Target"
-          identifier="D"
-        />
-        <sidebar-collapse-input v-model.number="d0" class="pb-4" />
-        <sidebar-collapse-input-header
-          :unit="metric ? 'km' : 'mi'"
-          title="Distance to Horizon"
-          identifier="D1"
-          class="mt-4"
-        />
-        <sidebar-collapse-result
-          horizon
-          :result="metric ? d1 : d1i"
-          class="pb-4"
-        />
-        <sidebar-collapse-input-header
-          :unit="metric ? 'm' : 'ft'"
-          title="Target Hidden Height"
-          identifier="H1"
-          class="mt-1"
-        />
-        <sidebar-collapse-result :result="metric ? h1 : h1i" class="pb-4" />
-      </sidebar-collapse>
-      <sidebar-collapse
-        title="Assumptions"
-        class="shadow-none hover:shadow-down-md hover:duration-200 transition ease-in-out duration-700"
+        <icon-logotype />
+      </icon>
+    </nuxt-link>
+
+    <!-- Earth Curvature Calculator -->
+    <nuxt-link to="/ecc/" class="group m-3 md:mx-6 lg:mx-8">
+      <base-logomark
+        name="ecc"
+        class="w-18 h-18 md:w-24 md:h-24 lg:w-28 lg:h-28"
       >
-        <ol class="list-decimal list-outside pl-3 text-xs">
-          <li class="pb-01">Light travels in a straight line.</li>
-          <li>The Earth is a sphere with a radius of 6371 km.</li>
-        </ol>
-      </sidebar-collapse>
-    </aside>
-    <!-- md:ml-73 md:w-sidebar -->
-    <!-- transformOrigin: {x: 0.5, y: 0.5}, -->
-    <div class="diagram w-full h-screen absolute right-0 md:w-sidebar">
-      <pan-zoom
-        :options="{
-          autocenter: true,
-          bounds: false,
-          minZoom: 0.5,
-          maxZoom: 3,
-          pinchSpeed: 1,
-          smoothScroll: true,
-          beforeWheel: function(e) {
-            // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
-            var shouldIgnore = !e.altKey
-            return shouldIgnore
-          }
-        }"
-        selector="#diagram"
-        class="w-full h-full cursor-grab active:cursor-grabbing"
+        <icon-calc />
+      </base-logomark>
+      <h2
+        class="absolute bottom-0 uppercase text-xs font-bold tracking tracking-widest left-0 right-0 mb-4 text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
       >
-        <diagram class="w-full h-full absolute outline-none" />
-      </pan-zoom>
-    </div>
+        Earth Curvature Calculator<br />
+        <span class="text-brand-400 font-normal">Press to View</span>
+      </h2>
+    </nuxt-link>
+
+    <!-- Flat Earth Clock -->
+    <nuxt-link to="/" class="group m-3 md:mx-6 lg:mx-8">
+      <base-logomark
+        name="fec"
+        class="w-18 h-18 md:w-24 md:h-24 lg:w-28 lg:h-28"
+      >
+        <icon-clock />
+      </base-logomark>
+      <h2
+        class="absolute bottom-0 uppercase text-xs font-bold tracking-widest left-0 right-0 mb-4 text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+      >
+        Flat Earth Clock<br />
+        <span class="text-brand-400 font-normal">Upcoming</span>
+      </h2>
+    </nuxt-link>
+
+    <!-- --------------------------------------------- -->
+    <!-- HORIZZN° -->
+    <nuxt-link to="/" class="hrz group m-3 md:mx-6 lg:mx-8">
+      <base-logomark
+        active
+        name="hrz"
+        class="hidden md:flex w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36"
+      >
+        <icon-circle />
+      </base-logomark>
+      <h2
+        class="absolute bottom-0 uppercase text-xs font-bold tracking tracking-widest left-0 right-0 mb-4 text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+      >
+        Tools For The awakened<br />
+        <span class="text-brand-400 font-normal">Choose Your Path</span>
+      </h2>
+    </nuxt-link>
+
+    <!-- United Flat earth -->
+    <nuxt-link to="/" class="group m-3 md:mx-6 lg:mx-8">
+      <base-logomark
+        name="ufe"
+        class="w-18 h-18 md:w-24 md:h-24 lg:w-28 lg:h-28"
+      >
+        <icon-ufe />
+      </base-logomark>
+      <h2
+        class="absolute bottom-0 uppercase text-xs font-bold tracking tracking-widest left-0 right-0 mb-4 text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+      >
+        United Flat Earth<br />
+        <span class="text-brand-400 font-normal">Upcoming</span>
+      </h2>
+    </nuxt-link>
+
+    <!-- Flat Earth Clock -->
+    <nuxt-link to="/" class="group m-3 md:mx-6 lg:mx-8">
+      <base-logomark
+        name="pps"
+        class="w-18 h-18 md:w-24 md:h-24 lg:w-28 lg:h-28"
+      >
+        <icon-compass />
+      </base-logomark>
+      <h2
+        class="absolute bottom-0 uppercase text-xs font-bold tracking tracking-widest left-0 right-0 mb-4 text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+      >
+        Plane Positioning System<br />
+        <span class="text-brand-400 font-normal">Upcoming</span>
+      </h2>
+    </nuxt-link>
   </div>
 </template>
 
 <script>
-import LogomarkBase from '~/components/icons/brand/LogomarkBase'
+import Icon from '~/components/icons/Icon'
 import IconCalc from '~/components/icons/brand/IconCalc'
-import Diagram from '~/components/Diagram'
-import SidebarCollapse from '~/components/SidebarCollapse'
-import SidebarCollapseInput from '~/components/SidebarCollapseInput'
-import SidebarCollapseInputHeader from '~/components/SidebarCollapseInputHeader'
-import SidebarCollapseResult from '~/components/SidebarCollapseResult'
+import IconClock from '~/components/icons/brand/IconClock'
+import IconCompass from '~/components/icons/brand/IconCompass'
+import IconCircle from '~/components/icons/brand/IconCircle'
+import IconLogotype from '~/components/icons/brand/IconLogotype'
+import IconUfe from '~/components/icons/brand/IconUfe'
+import BaseLogomark from '~/components/icons/brand/BaseLogomark'
 
 export default {
   components: {
-    LogomarkBase,
+    Icon,
     IconCalc,
-    Diagram,
-    SidebarCollapse,
-    SidebarCollapseInput,
-    SidebarCollapseInputHeader,
-    SidebarCollapseResult
-  },
-  data() {
-    return {
-      metric: true,
-      earthRadius: 6371,
-      earthRadiusImperial: 3958.75585149,
-      feetPerMeter: 3.2808399000000001422,
-      feetPerMile: 0.000189393939393939,
-      milesPerKilometer: 0.6213711920000000166,
-      h0: 0,
-      d0: 0,
-      h0i: 0,
-      d0i: 0
-    }
-  },
-  computed: {
-    d1() {
-      // a = √[(r + h)² - r²]
-      if (this.h0 >= 0.000000001) {
-        return Math.sqrt(
-          (this.earthRadius + this.h0 * 0.001) ** 2 - this.earthRadius ** 2
-        ).toFixed(8)
-        // .slice(0, 7)
-      } else {
-        return '0'
-      }
-    },
-    h1() {
-      // x = √(a² - 2ad + d² + r²) - r
-      if (this.d0 > this.d1) {
-        return (
-          (Math.sqrt(
-            this.d1 ** 2 -
-              2 * this.d1 * this.d0 +
-              this.d0 ** 2 +
-              this.earthRadius ** 2
-          ) -
-            this.earthRadius) *
-          1000
-        ).toFixed(6)
-        // .slice(0, 7) || "0"
-      } else {
-        return '0'
-      }
-    },
-    d1i() {
-      // a = √[(r + h)² - r²]
-      if (this.h0 >= 0.000000001) {
-        return Math.sqrt(
-          (this.earthRadiusImperial + this.h0 * this.feetPerMile) ** 2 -
-            this.earthRadiusImperial ** 2
-        ).toFixed(12)
-      } else {
-        return '0'
-      }
-    },
-    h1i() {
-      // x = √(a² - 2ad + d² + r²) - r
-      if (this.d0 > this.d1i) {
-        return (
-          (
-            (Math.sqrt(
-              this.d1i ** 2 -
-                2 * this.d1i * this.d0 +
-                this.d0 ** 2 +
-                this.earthRadiusImperial ** 2
-            ) -
-              this.earthRadiusImperial) /
-            this.feetPerMile
-          ).toFixed(12) || '0'
-        )
-      } else {
-        return '0'
-      }
-    }
+    IconClock,
+    IconCompass,
+    IconCircle,
+    IconLogotype,
+    IconUfe,
+    BaseLogomark
   }
 }
 </script>
 
-<style lang="postcss">
-aside {
-  box-shadow: 1px 0 2px 0 rgba(31, 33, 38, 0.08);
-}
-</style>
+<style lang="postcss"></style>
