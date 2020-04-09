@@ -4,14 +4,14 @@
       class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
     >
       <header class="flex flex-1 justify-center">
-        <a href="/">
+        <nuxt-link to="/">
           <base-logomark active class="mt-8 mb-12 w-22 h-22">
             <icon-calc />
           </base-logomark>
           <!-- <logomark-calculator
             class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
           /> -->
-        </a>
+        </nuxt-link>
       </header>
       <sidebar-collapse
         title="Calculator"
