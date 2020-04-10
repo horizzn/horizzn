@@ -16,7 +16,7 @@ export default {
       },
       // Open Graph / Facebook
       {property: 'og:type', content: 'website'},
-      {hid: 'og:url', property: 'og:url', content: 'https://horizzn.com/'},
+      {hid: 'og:url', property: 'og:url', content: 'https://horizzn.com'},
       {
         hid: 'og:title',
         property: 'og:title',
@@ -41,7 +41,7 @@ export default {
       {
         hid: 'twitter:url',
         property: 'twitter:url',
-        content: 'https://horizzn.com/'
+        content: 'https://horizzn.com'
       },
       {
         hid: 'twitter:title',
