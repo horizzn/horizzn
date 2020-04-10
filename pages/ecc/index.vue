@@ -128,6 +128,9 @@ export default {
   data() {
     return {
       title: 'Earth Curvature Calculator',
+      description:
+        'Simple, accurate, and beautiful Earth Curvature Calculator.',
+      poster: 'https://horizzn.com/images/horizzn-meta-poster-ecc.png',
       metric: true,
       earthRadius: 6371,
       earthRadiusImperial: 3958.75585149,
@@ -203,7 +206,56 @@ export default {
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Open Graph / Facebook
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://horizzn.com/ecc/'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Horizzn° | ' + this.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.poster
+        },
+        // Twitter
+        {
+          hid: 'twitter:url',
+          property: 'twitter:url',
+          content: this.$nuxt.$route.path
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: 'Horizzn° | ' + this.title
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: this.description
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: this.poster
+        }
+      ]
     }
   }
 }

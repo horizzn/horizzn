@@ -16,28 +16,45 @@ export default {
       },
       // Open Graph / Facebook
       {property: 'og:type', content: 'website'},
-      {property: 'og:url', content: 'https://horizzn.com/'},
-      {property: 'og:title', content: 'Horizzn° |  Tools for the Awakened'},
+      {hid: 'og:url', property: 'og:url', content: 'https://horizzn.com/'},
       {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Horizzn° |  Tools for the Awakened'
+      },
+      {
+        hid: 'og:description',
         property: 'og:description',
         content: process.env.npm_package_description
       },
       {
+        hid: 'og:image',
         property: 'og:image',
         content: 'https://horizzn.com/images/horizzn-meta-poster.png'
       },
       // Twitter
-      {property: 'twitter:card', content: 'summary_large_image'},
-      {property: 'twitter:url', content: 'https://horizzn.com/'},
       {
+        his: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'twitter:url',
+        property: 'twitter:url',
+        content: 'https://horizzn.com/'
+      },
+      {
+        hid: 'twitter:title',
         property: 'twitter:title',
         content: 'Horizzn° |  Tools for the Awakened'
       },
       {
+        hid: 'twitter:description',
         property: 'twitter:description',
         content: process.env.npm_package_description
       },
       {
+        hid: 'twitter:image',
         property: 'twitter:image',
         content: 'https://horizzn.com/images/horizzn-meta-poster.png'
       }
