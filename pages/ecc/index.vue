@@ -217,7 +217,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: 'https://horizzn.com/ecc/'
+          content: this.$nuxt.$route.path
         },
         {
           hid: 'og:title',
