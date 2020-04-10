@@ -4,18 +4,42 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_description || '',
-    // htmlAttrs: {
-    //   lang: 'he',
-    //   dir: 'rtl'
-    // },
+    titleTemplate: 'Horizzn° | %s',
+    title: 'Tools For The Awakened',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: process.env.npm_package_description
+      },
+      // Open Graph / Facebook
+      {property: 'og:type', content: 'website'},
+      {property: 'og:url', content: 'https://horizzn.com/'},
+      {property: 'og:title', content: 'Horizzn° |  Tools for the Awakened'},
+      {
+        property: 'og:description',
+        content: process.env.npm_package_description
+      },
+      {
+        property: 'og:image',
+        content: 'https://horizzn.com/images/horizzn-meta-poster.png'
+      },
+      // Twitter
+      {property: 'twitter:card', content: 'summary_large_image'},
+      {property: 'twitter:url', content: 'https://horizzn.com/'},
+      {
+        property: 'twitter:title',
+        content: 'Horizzn° |  Tools for the Awakened'
+      },
+      {
+        property: 'twitter:description',
+        content: process.env.npm_package_description
+      },
+      {
+        property: 'twitter:image',
+        content: 'https://horizzn.com/images/horizzn-meta-poster.png'
       }
     ],
     link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}]

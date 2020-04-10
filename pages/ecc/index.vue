@@ -127,6 +127,7 @@ export default {
   },
   data() {
     return {
+      title: 'Earth Curvature Calculator',
       metric: true,
       earthRadius: 6371,
       earthRadiusImperial: 3958.75585149,
@@ -198,6 +199,11 @@ export default {
       } else {
         return '0'
       }
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }
