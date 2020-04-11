@@ -54,7 +54,7 @@ aside::-webkit-scrollbar-thumb {
 } */
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity 0.333s ease-in-out;
 }
 .page-enter, .page-leave-to {
   opacity: 0;
