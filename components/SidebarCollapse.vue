@@ -6,19 +6,19 @@
     <div class="border-t border-gray-200">
       <a
         href="#"
-        :class="{'text-brand-900': active}"
+        :class="{'text-brand-900': isActive}"
         class="px-4 py-3 flex justify-between items-center text-brand-700 antialiased"
-        @click.prevent="active = !active"
+        @click.prevent="toggle()"
       >
         <h2 class="uppercase tracking-wide font-medium text-xs">
           {{ title }}
         </h2>
-        <span :class="{'transform rotate-90': active}" class="down-Arrow"
+        <span :class="{'transform rotate-90': isActive}" class="down-Arrow"
           ><icon class="w-3 h-3"><icon-arrow class=""/></icon
         ></span>
       </a>
     </div>
-    <div v-show="active" class="tab__content px-8 md:px-6 pb-6 text-xs">
+    <div v-show="isActive" class="tab__content px-8 md:px-6 pb-6 text-xs">
       <slot />
     </div>
   </div>
@@ -37,15 +37,30 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
-    // active: {
-    //   type: Boolean,
-    //   default: false
-    // }
   },
   data() {
     return {
-      active: false
+      isActive: false
+    }
+  },
+  watch: {
+    active(newVal) {
+      if (newVal !== this.isActive) {
+        this.isActive = newVal
+      }
+    }
+  },
+  mounted() {
+    this.isActive = this.active
+  },
+  methods: {
+    toggle() {
+      this.isActive = !this.isActive
     }
   }
 }

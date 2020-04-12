@@ -3,17 +3,17 @@
     <aside
       class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
     >
+      <!-- Branding -->
       <header class="flex flex-1 justify-center">
         <nuxt-link to="/">
           <base-logomark active class="mt-8 mb-12 w-22 h-22">
             <icon-calc />
           </base-logomark>
-          <!-- <logomark-calculator
-            class="mt-8 mb-12 w-20 h-20 rounded-1/3 shadow-lg hover:shadow-md transition ease-in-out duration-300 cursor-pointer transform hover:-translate-y--1 block"
-          /> -->
         </nuxt-link>
       </header>
-      <sidebar-collapse title="Calculator" class="">
+
+      <!-- Calculator -->
+      <sidebar-collapse active title="Calculator" class="">
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
@@ -67,6 +67,8 @@
         />
         <sidebar-collapse-result :result="metric ? h1 : h1i" class="pb-4" />
       </sidebar-collapse>
+
+      <!-- Info -->
       <sidebar-collapse title="Assumptions" class="">
         <ol class="list-decimal list-outside pl-3 text-xs">
           <li class="pb-01">Light travels in a straight line.</li>
