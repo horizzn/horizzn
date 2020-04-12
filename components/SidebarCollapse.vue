@@ -1,6 +1,6 @@
 <template>
   <div
-    class="overflow-hidden shadow-none hover:shadow-down-default hover:duration-200 transition ease-in-out duration-500"
+    class="overflow-hidden shadow-none hover:shadow-down-sm hover:duration-200 transition ease-in-out duration-500"
   >
     <!-- <div class="border-t border-brand-6" /> -->
     <div class="border-t border-gray-200">
