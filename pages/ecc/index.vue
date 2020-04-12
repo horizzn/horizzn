@@ -82,7 +82,7 @@
       <pan-zoom
         :options="{
           autocenter: true,
-          bounds: true,
+          bounds: false,
           minZoom: 1,
           maxZoom: 3,
           transformOrigin: {x: 0.5, y: 0.5},
