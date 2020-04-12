@@ -13,7 +13,7 @@
       </header>
 
       <!-- Calculator -->
-      <sidebar-collapse active title="Calculator" class="">
+      <sidebar-collapse title="Calculator" class="">
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
@@ -77,6 +77,7 @@
       </sidebar-collapse>
     </aside>
     <!-- md:ml-73 md:w-sidebar -->
+    <!-- pinchSpeed: 1.1, -->
     <div class="diagram w-full h-screen absolute right-0 md:w-sidebar">
       <pan-zoom
         :options="{
@@ -84,7 +85,6 @@
           bounds: true,
           minZoom: 1,
           maxZoom: 3,
-          pinchSpeed: 1.1,
           transformOrigin: {x: 0.5, y: 0.5},
           smoothScroll: true,
           beforeWheel: function(e) {
