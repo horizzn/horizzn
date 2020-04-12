@@ -6,7 +6,7 @@
       <!-- Branding -->
       <header class="flex flex-1 justify-center">
         <nuxt-link to="/">
-          <base-logomark active class="mt-8 mb-12 w-22 h-22">
+          <base-logomark active class="mt-8 mb-12 w-20 h-20">
             <icon-calc />
           </base-logomark>
         </nuxt-link>
