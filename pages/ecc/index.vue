@@ -83,21 +83,25 @@
     <div
       class="diagram w-full h-full absolute right-0 md:w-sidebar overflow-y-scroll md:overflow-y-hidden scrolling-touch"
     >
-      <!-- :options="{
+      <pan-zoom
+        :options="{
           autocenter: true,
           bounds: false,
           minZoom: 0.5,
           maxZoom: 5,
-          smoothScroll: false,
+          smoothScroll: true,
           transformOrigin: {x: 0.5, y: 0.5},
           beforeWheel: function(e) {
             // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
             var shouldIgnore = !e.altKey
             return shouldIgnore
+          },
+          onTouch: function(e) {
+            // `e` - is current touch event.
+
+            return false // tells the library to not preventDefault.
           }
-        }" -->
-      <pan-zoom
-        :options="{autocenter: true}"
+        }"
         selector="#diagram"
         class="cursor-grab active:cursor-grabbing"
       >
