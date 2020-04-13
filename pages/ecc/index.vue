@@ -83,8 +83,7 @@
     <div
       class="diagram w-full h-full absolute right-0 md:w-sidebar overflow-y-scroll md:overflow-y-hidden scrolling-touch"
     >
-      <pan-zoom
-        :options="{
+      <!-- :options="{
           autocenter: true,
           bounds: false,
           minZoom: 0.5,
@@ -96,7 +95,9 @@
             var shouldIgnore = !e.altKey
             return shouldIgnore
           }
-        }"
+        }" -->
+      <pan-zoom
+        :options="{autocenter: true}"
         selector="#diagram"
         class="cursor-grab active:cursor-grabbing"
       >
