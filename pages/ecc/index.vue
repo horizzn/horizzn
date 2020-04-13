@@ -78,15 +78,16 @@
     </aside>
     <!-- md:ml-73 md:w-sidebar -->
     <!-- pinchSpeed: 1.1, -->
-    <div class="diagram w-full h-screen absolute right-0 md:w-sidebar">
+    <!-- transformOrigin: {x: 0.5, y: 0.5},
+          smoothScroll: true, -->
+    <div class="diagram w-full h-full absolute right-0 md:w-sidebar">
       <pan-zoom
         :options="{
           autocenter: true,
           bounds: false,
-          minZoom: 1,
-          maxZoom: 3,
-          transformOrigin: {x: 0.5, y: 0.5},
-          smoothScroll: true,
+          minZoom: 0.5,
+          maxZoom: 5,
+          smoothScroll: false,
           beforeWheel: function(e) {
             // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
             var shouldIgnore = !e.altKey
@@ -94,7 +95,7 @@
           }
         }"
         selector="#diagram"
-        class="w-full h-full cursor-grab active:cursor-grabbing"
+        class="cursor-grab active:cursor-grabbing"
       >
         <diagram class="w-full h-full absolute outline-none" />
       </pan-zoom>
