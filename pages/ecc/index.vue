@@ -13,7 +13,7 @@
       </header>
 
       <!-- Calculator -->
-      <sidebar-collapse title="Calculator" class="">
+      <sidebar-collapse active title="Calculator" class="">
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
@@ -81,7 +81,7 @@
     <!-- transformOrigin: {x: 0.5, y: 0.5},
           smoothScroll: true, -->
     <div
-      class="diagram w-full h-full absolute right-0 md:w-sidebar overflow-y-scroll md:overflow-y-hidden scrolling-touch"
+      class="diagram hidden md:flex w-full h-full absolute right-0 md:w-sidebar overflow-y-scroll md:overflow-y-hidden scrolling-touch"
     >
       <pan-zoom
         :options="{
@@ -95,11 +95,6 @@
             // allow wheel-zoom only if altKey is pressed. Otherwise - ignore
             var shouldIgnore = !e.altKey
             return shouldIgnore
-          },
-          onTouch: function(e) {
-            // `e` - is current touch event.
-
-            return false // tells the library to not preventDefault.
           }
         }"
         selector="#diagram"
