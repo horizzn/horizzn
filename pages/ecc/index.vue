@@ -21,7 +21,7 @@
       </header>
 
       <!-- Calculator -->
-      <sidebar-collapse active title="Curvature Calculator" class="">
+      <sidebar-collapse title="Curvature Calculator" class="">
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
@@ -787,17 +787,17 @@ export default {
       const blob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'})
       const url = window.URL.createObjectURL(blob)
       const img = new Image()
-      img.width = 1280
-      img.height = 282
+      img.width = 1280 * 2
+      img.height = 282 * 2
       img.onload = function() {
         const canvas = document.createElement('canvas')
-        canvas.width = 1480
-        canvas.height = 482
+        canvas.width = 1480 * 2
+        canvas.height = 482 * 2
 
         const ctx = canvas.getContext('2d')
         ctx.fillStyle = '#F6F7FB'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
-        ctx.drawImage(img, 100, 100, 1280, 282)
+        ctx.drawImage(img, 200, 200, 1280 * 2, 282 * 2)
 
         window.URL.revokeObjectURL(url)
         const canvasdata = canvas.toDataURL('image/png')
