@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="md:min-h-screen bg-brand-100 antialiased">
     <!-- <t-navbar /> -->
     <nuxt />
   </div>
@@ -13,10 +13,10 @@ export default {
 }
 </script>
 <style lang="postcss">
-body {
-  /* font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320))); */
+/* body {
+  font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
   @apply bg-brand-100 antialiased;
-}
+} */
 /* .t-container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 } */
