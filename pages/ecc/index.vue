@@ -1,14 +1,22 @@
 <template lang="html">
   <div class="page-wrap">
     <aside
-      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20"
+      class="w-full md:w-73 md:fixed md:h-screen bg-white md:overflow-y-auto z-20 relative"
     >
       <!-- Branding -->
-      <header class="flex flex-1 justify-center">
+      <header class="flex justify-center flex-col items-center">
         <nuxt-link to="/">
-          <base-logomark active class="mt-6 mb-8 w-20 h-20">
+          <base-logomark active class="mt-8 mb-0 w-20 h-20">
             <icon-calc />
           </base-logomark>
+        </nuxt-link>
+        <nuxt-link to="/" class="bottom-0 block w-full flex justify-center">
+          <icon
+            viewbox="0 0 512 112"
+            class=" text-brand-600 fill-current w-24 h-24"
+          >
+            <icon-logotype />
+          </icon>
         </nuxt-link>
       </header>
 
@@ -670,7 +678,9 @@
 
 <script>
 import BaseLogomark from '~/components/icons/brand/BaseLogomark'
+import Icon from '~/components/icons/Icon'
 import IconCalc from '~/components/icons/brand/IconCalc'
+import IconLogotype from '~/components/icons/brand/IconLogotype'
 // import Diagram from '~/components/Diagram'
 import SidebarCollapse from '~/components/SidebarCollapse'
 import SidebarCollapseInput from '~/components/SidebarCollapseInput'
@@ -680,7 +690,9 @@ import SidebarCollapseResult from '~/components/SidebarCollapseResult'
 export default {
   components: {
     BaseLogomark,
+    Icon,
     IconCalc,
+    IconLogotype,
     // Diagram,
     SidebarCollapse,
     SidebarCollapseInput,
