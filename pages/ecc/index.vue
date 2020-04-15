@@ -21,7 +21,7 @@
       </header>
 
       <!-- Calculator -->
-      <sidebar-collapse active title="Calculator" class="">
+      <sidebar-collapse active title="Curvature Calculator" class="">
         <header
           class="text-xs tracking-wider mb-6 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
         >
@@ -82,9 +82,7 @@
           <header
             class="text-xs tracking-wider mb-0 mt-1 text-gray-950 group-hover:text-gray-950 transition ease-in-out duration-200 antialiased flex justify-between items-center"
           >
-            <span class="uppercase cursor-pointer" @click="metric = !metric"
-              >Download</span
-            >
+            <span class="uppercase cursor-pointer">Download</span>
             <span class="text-xs lowercase text-gray-600">
               <span class="text-brand-800 font-bold cursor-pointer">png</span>
             </span>
