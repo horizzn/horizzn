@@ -791,7 +791,7 @@ export default {
 
         window.URL.revokeObjectURL(url)
         const canvasdata = canvas.toDataURL('image/png')
-        dl.download = 'Horizzn-Earth-Curvature-Diagram' + Date.now() + '.png'
+        dl.download = 'Horizzn-Earth-Curvature-Diagram.png'
         dl.href = canvasdata
       }
       img.src = url
