@@ -777,10 +777,10 @@ export default {
     }
   },
   mounted() {
-    this.handleSvg()
+    this.saveDiagram()
   },
   methods: {
-    handleSvg() {
+    saveDiagram() {
       const svg = this.$refs.svg
       const dl = this.$refs.dl
       const svgData = new XMLSerializer().serializeToString(svg)
