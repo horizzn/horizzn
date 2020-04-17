@@ -13,7 +13,7 @@
         <nuxt-link to="/" class="bottom-0 block w-full flex justify-center">
           <icon
             viewbox="0 0 512 112"
-            class=" text-brand-600 fill-current w-24 h-24"
+            class="text-brand-600 fill-current w-24 h-24"
           >
             <icon-logotype />
           </icon>
@@ -105,6 +105,7 @@
           <li>The Earth is a sphere with a radius of 6371 km.</li>
         </ol>
       </sidebar-collapse>
+      <app-social />
     </aside>
     <!-- md:ml-73 md:w-sidebar -->
     <!-- pinchSpeed: 1.1, -->
@@ -1499,6 +1500,7 @@
 </template>
 
 <script>
+import AppSocial from '~/components/AppSocial'
 import BaseLogomark from '~/components/icons/brand/BaseLogomark'
 import Icon from '~/components/icons/Icon'
 import IconCalc from '~/components/icons/brand/IconCalc'
@@ -1511,6 +1513,7 @@ import SidebarCollapseResult from '~/components/SidebarCollapseResult'
 
 export default {
   components: {
+    AppSocial,
     BaseLogomark,
     Icon,
     IconCalc,
