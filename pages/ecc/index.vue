@@ -99,11 +99,24 @@
       </sidebar-collapse>
 
       <!-- Assumptions -->
-      <sidebar-collapse title="Assumptions" class="">
+      <sidebar-collapse title="Assumptions">
         <ol class="list-decimal list-outside pl-3 text-xs">
           <li class="pb-01">Light travels in a straight line.</li>
           <li>The Earth is a sphere with a radius of 6371 km.</li>
         </ol>
+      </sidebar-collapse>
+      <!-- Resources -->
+      <sidebar-collapse title="Resources">
+        <ul class="text-xs">
+          <li>
+            <a
+              href="https://github.com/horizzn/flat-earth-books/tree/master/src"
+              title="Flat Earth Books"
+              target="_blank"
+              >Books</a
+            >
+          </li>
+        </ul>
       </sidebar-collapse>
       <app-social />
     </aside>
